@@ -1,7 +1,7 @@
-echo "1.7"
+echo "1.8"
 rm *
 rm ./krtd
-rm -rf ./.krt
+rm -rf $USERHOME/.krt
 rm /usr/local/bin/krtd
 rm /usr/local/bin/krtcli
 echo "
@@ -19,7 +19,7 @@ cp ./krt-cli-Linux64 krtcli
 
 chmod +x /usr/local/bin/krtd
 chmod +x ./krtd
-chmod +x /usr/local/bin/krtdcli
+chmod +x /usr/local/bin/krtcli
 chmod +x ./krtcli
 echo "
 
@@ -71,7 +71,7 @@ WantedBy=multi-user.target
 EOL
 
 chmod +x /usr/local/bin/krtd 
-chmod +x /usr/local/bin/krtdcli
+chmod +x /usr/local/bin/krtcli
 sudo ln -s /usr/lib/x86_64-linux-gnu/libboost_system.so.1.58.0 /usr/lib/x86_64-linux-gnu/libboost_program_options.so.1.54.0
 #start service
 echo "
