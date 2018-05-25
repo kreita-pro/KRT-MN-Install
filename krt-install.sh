@@ -136,6 +136,11 @@ bind=${IP}:47047
 masternodeaddr=${IP}
 masternodeprivkey=${KEY}
 masternode=1
+addnode=144.202.55.218:47047
+addnode=104.238.184.239:47047
+addnode=149.28.61.132:47047
+addnode=174.69.58.46:47047
+addnode=103.208.27.23:47047
 EOL
 chmod 0600 $USERHOME/.krt/krt.conf
 chown -R $USER:$USER $USERHOME/.krt
