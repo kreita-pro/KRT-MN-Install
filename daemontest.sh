@@ -2,6 +2,7 @@ echo "1.2"
 echo rm ./krtd
 echo rm -rf /root/.krt
 echo rm /usr/local/bin/krtd
+echo rm /usr/local/bin/krtcli
 echo "
 
 **********Installing deamon***********
