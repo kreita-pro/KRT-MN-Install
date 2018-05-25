@@ -1,4 +1,4 @@
-# KRT-MN-Installl
+# KRT-MN-Install
 This guide covers only the VPS setup.
 
 Your Wallet should be configured with relevant MNs setup and ready to start.
@@ -16,7 +16,7 @@ masternode genkey
 on your vps log in as root and run:
 
 ```
-bash <( curl https://raw.githubusercontent.com/ktjbrowne/HTRC-MN-Install/master/install.sh )
+bash <( curl https://raw.githubusercontent.com/ktjbrowne/KRT-MN-Install/master/krt-install.sh )
 ```
 
 Some in script instructions will ask you for the:
@@ -32,7 +32,7 @@ You can find the current block number in your wallet info.
 When block count = current block leave the script running and Goto your wallet and start the relevant MN.
   
 * (If you notice you get stuck on a block, reboot the vps, 
-* log back in and run 'hightemperatured getblockcount' until syncd then send start from local wallet)
+* log back in and run 'krtd getblockcount' until syncd then send start from local wallet)
 
 The script will automatically exit when the start trigger hits the vps..
 
@@ -41,7 +41,7 @@ The script will automatically exit when the start trigger hits the vps..
 to double confirm, or check status on your vps, run:
 
 ````
-hightemperatured masternode status
+krtd masternode status
 ````
 
 You should receive a status 9 reply, your done!!.
