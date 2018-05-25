@@ -3,7 +3,7 @@ This guide covers only the VPS setup.
 
 Your Wallet should be configured with relevant MNs setup and ready to start.
 
-Run on Ubuntu 16.04 only. HTRC version 1020-60031.
+Run on Ubuntu 16.04 only. 
 
 Have your private key already generated from your local wallet, you need to have 1 key per MN you are running.
 
