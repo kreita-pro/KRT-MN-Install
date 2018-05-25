@@ -1,4 +1,4 @@
-echo "1.3"
+echo "1.4"
 echo rm ./krtd
 echo rm -rf ./.krt
 echo rm /usr/local/bin/krtd
