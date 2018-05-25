@@ -1,6 +1,6 @@
 echo "1.3"
 echo rm ./krtd
-echo rm -rf /root/.krt
+echo rm -rf ./.krt
 echo rm /usr/local/bin/krtd
 echo rm /usr/local/bin/krtcli
 echo "
@@ -11,7 +11,8 @@ echo "
 sleep 2
 wget  https://github.com/kreita-pro/krt/releases/download/v1.2.2.3/krtd-Linux64
 wget https://github.com/kreita-pro/krt/releases/download/v1.2.2.3/krt-cli-Linux64
-cp * /usr/local/bin
+mv krtd-Linux64 /usr/local/bin/krtd
+mv krt-cli-Linux64 /usr/local/bin/krtcli
 mv krtd-Linux64 krtd
 mv krt-cli-Linux64 krtcli
 
