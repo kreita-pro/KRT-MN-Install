@@ -189,7 +189,8 @@ until su -c "krtcli startmasternode local false 2>/dev/null | grep 'successfully
     clear
     echo "Service Started. Your masternode is syncing. 
     When Current = Synced then select your MN in the local wallet and start it."
-    echo "Current Block: "
+    echo "Current Block: 
+    "
     su -c "curl http://explorer.kreita.io/api/getblockcount" $USER
     echo "Synced Blocks: 
     "
