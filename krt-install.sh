@@ -91,8 +91,7 @@ apt-get -qq install ufw
 ufw default deny incoming
 ufw default allow outgoing
 ufw allow ssh
-ufw allow 11368/tcp
-ufw allow 11369/tcp
+ufw allow 47047/tcp
 yes | ufw enable
 
 
@@ -103,10 +102,15 @@ echo "
 "
 sleep 2
 wget  https://github.com/kreita-pro/krt/releases/download/v1.2.2.3/krtd-Linux64
+wget https://github.com/kreita-pro/krt/releases/download/v1.2.2.3/krtcli-Linux64
 cp /root/krtd-Linux64 /usr/local/bin/krtd
+cp /root/krtcli-Linux64 /usr/local/bin/krtcli
 cp /root/krtd-linux64 /root/krtd
+cp /root/krtcli-Linux64 /root/krtcli
 chmod +x /usr/local/bin/krtd
-chmod +x /root/krtd
+chmod +x /root/krtcli
+chmod +x /usr/local/bin/krtd
+chmod +x /root/krtcli
 echo "
 
 *********Configuring confs***********
