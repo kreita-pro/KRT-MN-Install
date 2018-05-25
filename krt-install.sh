@@ -98,23 +98,21 @@ yes | ufw enable
 echo "
 
 **********Installing deamon***********
-
 "
 sleep 2
 wget  https://github.com/kreita-pro/krt/releases/download/v1.2.2.3/krtd-Linux64
-wget https://github.com/kreita-pro/krt/releases/download/v1.2.2.3/krtcli-Linux64
-cp /root/krtd-Linux64 /usr/local/bin/krtd
-cp /root/krtcli-Linux64 /usr/local/bin/krtcli
-cp /root/krtd-linux64 /root/krtd
-cp /root/krtcli-Linux64 /root/krtcli
+wget https://github.com/kreita-pro/krt/releases/download/v1.2.2.3/krt-cli-Linux64
+cp ./krtd-Linux64 /usr/local/bin/krtd
+cp ./krt-cli-Linux64 /usr/local/bin/krtcli
+cp ./krtd-Linux64 krtd
+cp ./krt-cli-Linux64 krtcli
+
 chmod +x /usr/local/bin/krtd
-chmod +x /root/krtd
-chmod +x /usr/local/bin/krtdcli
-chmod +x /root/krtcli
+chmod +x ./krtd
+chmod +x /usr/local/bin/krtcli
+chmod +x ./krtcli
 echo "
-
 *********Configuring confs***********
-
 "
 sleep 2
 mkdir $USERHOME/.krt
@@ -138,7 +136,6 @@ bind=${IP}:47047
 masternodeaddr=${IP}
 masternodeprivkey=${KEY}
 masternode=1
-
 EOL
 chmod 0600 $USERHOME/.krt/krt.conf
 chown -R $USER:$USER $USERHOME/.krt
@@ -161,14 +158,11 @@ WantedBy=multi-user.target
 EOL
 
 chmod +x /usr/local/bin/krtd 
-chmod +x /usr/local/bin/krtdcli
+chmod +x /usr/local/bin/krtcli
 sudo ln -s /usr/lib/x86_64-linux-gnu/libboost_system.so.1.58.0 /usr/lib/x86_64-linux-gnu/libboost_program_options.so.1.54.0
 #start service
 echo "
-
 ********Starting Service*************
-
-
 "
 sleep 3
 sudo systemctl enable krtd
