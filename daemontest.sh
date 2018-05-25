@@ -1,9 +1,9 @@
-echo "1.6"
+echo "1.7"
 rm *
-echo rm ./krtd
-echo rm -rf ./.krt
-echo rm /usr/local/bin/krtd
-echo rm /usr/local/bin/krtcli
+rm ./krtd
+rm -rf ./.krt
+rm /usr/local/bin/krtd
+rm /usr/local/bin/krtcli
 echo "
 
 **********Installing deamon***********
