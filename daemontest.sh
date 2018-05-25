@@ -1,4 +1,6 @@
-
+rm *
+rm -rf /root/.krt
+rm /usr/local/bin/krtd
 echo "
 
 **********Installing deamon***********
