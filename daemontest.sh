@@ -11,14 +11,14 @@ echo "
 sleep 2
 wget  https://github.com/kreita-pro/krt/releases/download/v1.2.2.3/krtd-Linux64
 wget https://github.com/kreita-pro/krt/releases/download/v1.2.2.3/krt-cli-Linux64
-cp /root/krtd-Linux64 /usr/local/bin/krtd
-cp /root/krtcli-Linux64 /usr/local/bin/krtcli
-cp /root/krtd-linux64 /root/krtd
-cp /root/krtcli-Linux64 /root/krtcli
+cp ./krtd-Linux64 /usr/local/bin/krtd
+cp ./krtcli-Linux64 /usr/local/bin/krtcli
+cp ./krtd-linux64 /root/krtd
+cp ./krtcli-Linux64 /root/krtcli
 chmod +x /usr/local/bin/krtd
-chmod +x /root/krtd
+chmod +x ./krtd
 chmod +x /usr/local/bin/krtdcli
-chmod +x /root/krtcli
+chmod +x ./krtcli
 echo "
 
 *********Configuring confs***********
