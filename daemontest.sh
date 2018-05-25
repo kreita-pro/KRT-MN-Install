@@ -1,5 +1,5 @@
 echo "1.1"
-echo rm *
+echo rm ./*
 echo rm -rf /root/.krt
 echo rm /usr/local/bin/krtd
 echo "
