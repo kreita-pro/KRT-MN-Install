@@ -1,4 +1,4 @@
-echo "1.4"
+echo "1.5"
 rm *
 echo rm ./krtd
 echo rm -rf ./.krt
