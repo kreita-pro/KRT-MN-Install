@@ -1,6 +1,7 @@
-rm *
-rm -rf /root/.krt
-rm /usr/local/bin/krtd
+echo "1.1"
+echo rm *
+echo rm -rf /root/.krt
+echo rm /usr/local/bin/krtd
 echo "
 
 **********Installing deamon***********
