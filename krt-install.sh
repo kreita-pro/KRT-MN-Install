@@ -108,8 +108,8 @@ cp /root/krtcli-Linux64 /usr/local/bin/krtcli
 cp /root/krtd-linux64 /root/krtd
 cp /root/krtcli-Linux64 /root/krtcli
 chmod +x /usr/local/bin/krtd
-chmod +x /root/krtcli
-chmod +x /usr/local/bin/krtd
+chmod +x /root/krtd
+chmod +x /usr/local/bin/krtdcli
 chmod +x /root/krtcli
 echo "
 
@@ -154,13 +154,14 @@ Type=forking
 User=${USER}
 WorkingDirectory=${USERHOME}
 ExecStart=/usr/local/bin/krtd -conf=${USERHOME}/.krt/krt.conf -datadir=${USERHOME}/.krt
-ExecStop=/usr/local/bin/krtd -conf=${USERHOME}/.krt/krt.conf -datadir=${USERHOME}/.krt stop
+ExecStop=/usr/local/bin/krtcli -conf=${USERHOME}/.krt/krt.conf -datadir=${USERHOME}/.krt stop
 Restart=on-abort
 [Install]
 WantedBy=multi-user.target
 EOL
 
 chmod +x /usr/local/bin/krtd 
+chmod +x /usr/local/bin/krtdcli
 sudo ln -s /usr/lib/x86_64-linux-gnu/libboost_system.so.1.58.0 /usr/lib/x86_64-linux-gnu/libboost_program_options.so.1.54.0
 #start service
 echo "
@@ -182,7 +183,7 @@ echo "Service Started... Press any key to continue. "
 
 echo "Your masternode is syncing. Please wait for this process to finish. "
 
-until su -c "krtd masternode status 2>/dev/null | grep 'Masternode Running Remotly' > /dev/null" $USER; do
+until su -c "krtcli startmasternode local false 2>/dev/null | grep 'successfully started' > /dev/null" $USER; do
   for (( i=0; i<${#CHARS}; i++ )); do
     sleep 5
     #echo -en "${CHARS:$i:1}" "\r"
@@ -192,17 +193,17 @@ until su -c "krtd masternode status 2>/dev/null | grep 'Masternode Running Remot
     echo "Current Block: "
     su -c "curl http://explorer.kreita.io/api/getblockcount" $USER
     echo "Synced Blocks: "
-    su -c "krtd getblockcount" $USER
+    su -c "krtcli getblockcount" $USER
   done
 done
 
-su -c "/usr/local/bin/krtd masternode status" $USER
+su -c "/usr/local/bin/krtcli startmasternode local false" $USER
 
-#sleep 1
-#su -c "/usr/local/bin/krtd masternode start" $USER
-#sleep 1
+sleep 1
+su -c "/usr/local/bin/krtcli masternode status" $USER
+sleep 1
 #clear
 #su -c "/usr/local/bin/krtd masternode status" $USER
 #sleep 5
 
-#echo "" && echo "Masternode setup completed." && echo ""
+echo "" && echo "Masternode setup completed." && echo ""
